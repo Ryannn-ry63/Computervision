@@ -9,6 +9,8 @@ __pycache__/
 **/.git.local-backup/
 
 # Model weights/checkpoints and downloaded archives
+.deps/
+**/.deps/
 *.pth
 *.pt
 *.ckpt
