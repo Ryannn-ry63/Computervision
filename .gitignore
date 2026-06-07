@@ -1,0 +1,43 @@
+# Python/cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Nested repository metadata
+**/.git/
+**/.git.local-backup/
+
+# Model weights/checkpoints and downloaded archives
+*.pth
+*.pt
+*.ckpt
+*.tckpt
+*.onnx
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+checkpoints/
+official_downloads/
+model_dir/
+model_dir_spconv2/
+CLOCs/CLOCs_SecCas_pretrained/*.tckpt
+CLOCs/CLOCs_SecCas_pretrained/adam_optimizer-*.tckpt
+
+# Dataset / intermediate binary artifacts
+*.bin
+*.pkl
+*.npy
+*.npz
+*.pcd
+*.label
+
+# Local generated detector artifacts
+outputs/**/painted_lidar/
+outputs/**/*.pth
+multisensor_fusion_reproduction/outputs/**/painted_lidar/
+multisensor_fusion_reproduction/outputs/**/*.pth
+
+# Large packaged attachment, regenerated from multisensor_fusion_reproduction/
+multisensor_fusion_reproduction.zip

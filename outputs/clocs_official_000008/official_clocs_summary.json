@@ -1,0 +1,9 @@
+{
+  "raw_predictions": 100,
+  "unique_predictions": 1,
+  "scores": [
+    0.8681
+  ],
+  "prediction_file": "CLOCs/CLOCs_SecCas_pretrained/eval_results/step_30950/000008.txt",
+  "note": "Visualization deduplicates identical KITTI rows exported by the compatibility run."
+}

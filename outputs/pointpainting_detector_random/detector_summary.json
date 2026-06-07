@@ -1,0 +1,7 @@
+{
+  "checkpoint": null,
+  "num_predictions": 0,
+  "scores": [],
+  "labels": [],
+  "note": "The overfit checkpoint is trained only on KITTI demo frame 000008 for pipeline reproduction."
+}

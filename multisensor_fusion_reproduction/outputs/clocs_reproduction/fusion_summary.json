@@ -1,0 +1,46 @@
+{
+  "sample": "KITTI 000008",
+  "num_3d_candidates": 6,
+  "num_2d_candidates": 6,
+  "source_3d_candidates": "outputs/pointpainting_detector_300iter/predictions_000008.npz",
+  "source_2d_candidates": "KITTI annotation boxes used as 2D detector proxy for visualization",
+  "features": [
+    "2D IoU",
+    "3D score",
+    "2D score",
+    "normalized distance"
+  ],
+  "best_pair_iou": [
+    0.6042750930798549,
+    0.6750150058968142,
+    0.8074193471817899,
+    0.7791297901189214,
+    0.6063738389439572,
+    0.808249138895766
+  ],
+  "scores_3d": [
+    0.6457798480987549,
+    0.5430665612220764,
+    0.5073314309120178,
+    0.4631817042827606,
+    0.45532655715942383,
+    0.4243195056915283
+  ],
+  "scores_2d_matched": [
+    0.9135945053100586,
+    0.909274507522583,
+    0.8961145095825195,
+    0.7020345081329344,
+    0.9400745086669922,
+    0.761894507598877
+  ],
+  "fused_scores_proxy": [
+    0.923413635750914,
+    0.9434768467844846,
+    0.9566920822083297,
+    0.9389935055529945,
+    0.9130961800986271,
+    0.9443218686759626
+  ],
+  "limitation": "No official CLOCs/SECOND/Cascade-RCNN pretrained artifacts were included locally; this is a candidate-level CLOCs-style visualization, not KITTI benchmark evaluation."
+}

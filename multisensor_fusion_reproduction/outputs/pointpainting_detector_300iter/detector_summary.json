@@ -1,0 +1,21 @@
+{
+  "checkpoint": "outputs/pointpainting_detector_300iter/pointpillar_painted_000008_overfit.pth",
+  "num_predictions": 6,
+  "scores": [
+    0.6457798480987549,
+    0.5430665612220764,
+    0.5073314309120178,
+    0.4631817042827606,
+    0.45532655715942383,
+    0.4243195056915283
+  ],
+  "labels": [
+    "Car",
+    "Car",
+    "Car",
+    "Car",
+    "Car",
+    "Car"
+  ],
+  "note": "The overfit checkpoint is trained only on KITTI demo frame 000008 for pipeline reproduction."
+}
