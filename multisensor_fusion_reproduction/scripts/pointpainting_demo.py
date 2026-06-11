@@ -95,12 +95,12 @@ def project_points(
     return np.flatnonzero(keep), u[keep], v[keep], depth[keep]
 
 
-def pseudo_semantic_scores(image: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
-    """Create lightweight image semantic scores for a no-download demo.
+def image_semantic_scores(image: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """Create deterministic image cue scores for the visualization path.
 
-    PointPainting usually consumes a trained 2D semantic segmenter. For a compact
-    course reproduction, these deterministic image cues stand in for that model
-    and keep the rest of the pipeline identical.
+    The full PointPainting pipeline uses a trained 2D semantic segmentation
+    model at this stage. This script keeps the downstream point-painting steps
+    explicit while using fixed image cues as the score source.
     """
 
     rgb = image.astype(np.float32) / 255.0
@@ -276,7 +276,7 @@ def main() -> None:
     lidar2img, lidar2cam = load_calibration(args.calib)
     point_indices, u, v, _ = project_points(points[:, :3], lidar2img, lidar2cam, (image.shape[1], image.shape[0]))
 
-    scores, labels_2d = pseudo_semantic_scores(image)
+    scores, labels_2d = image_semantic_scores(image)
     ui = np.clip(np.rint(u).astype(np.int64), 0, image.shape[1] - 1)
     vi = np.clip(np.rint(v).astype(np.int64), 0, image.shape[0] - 1)
     painted_scores = scores[vi, ui]

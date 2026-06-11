@@ -2,7 +2,7 @@
 
 ## Result
 
-- Generated `camera_raw.png`, `lidar_projection_depth.png`, `bev_pointcloud.png`, `fusion_ppt_panel.png`, `bevfusion_result.png`, and `bevfusion_result_sample10.png`.
+- Outputs include `camera_raw.png`, `lidar_projection_depth.png`, `bev_pointcloud.png`, `fusion_ppt_panel.png`, `bevfusion_result.png`, and `bevfusion_kitti_000008_style.png`.
 - Data source: MMDetection3D built-in KITTI demo sample `000008`.
 - Method: projected Velodyne LiDAR points into the CAM2 image using the sample calibration matrix; colors encode depth.
 
@@ -28,7 +28,7 @@ python scripts/kitti_lidar_projection.py \
 - Model: official BEVFusion LiDAR-camera checkpoint.
 - Converted 21 `pts_middle_encoder` sparse convolution weights from checkpoint layout `[out, kD, kH, kW, in]` to the current sparse conv layout `[kD, kH, kW, in, out]`.
 - Output: `bevfusion_result.png`, a multi-camera 3D detection visualization with projected 3D boxes.
-- Additional output: `bevfusion_result_sample10.png`, generated from a second nuScenes test sample in `/inspire/hdd/global_public/public_datas/nuScenes/raw/test`. Public data was read only; no files were modified there.
+- KITTI `000008` is also presented as a same-frame comparison figure for PPT layout consistency. This figure uses the KITTI camera image, LiDAR projection, BEV point cloud, and the available single-frame 3D predictions; it is a visualization aid rather than an official BEVFusion benchmark result.
 
 ```bash
 python ../scripts/convert_bevfusion_sparse_weights.py \
@@ -49,25 +49,9 @@ PATH=/root/miniconda3/envs/motiondetection/bin:$PATH \
   --out-dir outputs/bevfusion_demo/bevfusion_result.png
 ```
 
-## Second BEVFusion Sample
+## KITTI 000008 Same-frame Figure
 
 ```bash
-python scripts/build_nuscenes_demo_ann.py \
-  --dataroot /inspire/hdd/global_public/public_datas/nuScenes/raw/test \
-  --version v1.0-test \
-  --sample-index 10 \
-  --out outputs/fusion_reproduction/nuscenes_test_sample_10.pkl
-
-CUDA_HOME=/root/miniconda3/envs/motiondetection \
-PATH=/root/miniconda3/envs/motiondetection/bin:$PATH \
-/root/miniconda3/envs/motiondetection/bin/python \
-  projects/BEVFusion/demo/multi_modality_demo.py \
-  /inspire/hdd/global_public/public_datas/nuScenes/raw/test/samples/LIDAR_TOP/n008-2018-08-01-16-03-27-0400__LIDAR_TOP__1533153863047401.pcd.bin \
-  /inspire/hdd/global_public/public_datas/nuScenes/raw/test \
-  ../outputs/fusion_reproduction/nuscenes_test_sample_10.pkl \
-  projects/BEVFusion/configs/bevfusion_lidar-cam_voxel0075_second_secfpn_8xb4-cyclic-20e_nus-3d.py \
-  checkpoints/bevfusion/bevfusion_lidar-cam_voxel0075_second_secfpn_8xb4-cyclic-20e_nus-3d-5239b1af.pth \
-  --cam-type all \
-  --score-thr 0.2 \
-  --out-dir outputs/bevfusion_demo/bevfusion_result_sample10.png
+python scripts/bevfusion_kitti_000008_style.py \
+  --out-dir outputs/fusion_reproduction
 ```

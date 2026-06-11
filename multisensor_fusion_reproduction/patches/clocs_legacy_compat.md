@@ -42,13 +42,13 @@ CLOCS_SECOND_MODEL_DIR=../model_dir_spconv2 \
   --pickle_result=False
 ```
 
-The command generated:
+The command writes:
 
 ```text
 CLOCs/CLOCs_SecCas_pretrained/eval_results/step_30950/000008.txt
 ```
 
-The script continued into official AP evaluation after label generation and stopped because the local mini KITTI subset does not contain a full validation set annotation list. Therefore the report uses the generated single-frame prediction and visualization, not KITTI benchmark AP.
+The script continued into official AP evaluation after label export and stopped because the local mini KITTI subset does not contain a full validation set annotation list. Therefore the report uses the saved single-frame prediction and visualization, not KITTI benchmark AP.
 
 ## Visualization
 
@@ -61,4 +61,3 @@ cd /inspire/hdd/global_user/wangcaojun-240208020180/nry/computervision
 ```
 
 The visualization summary reported 100 exported rows and 1 unique prediction after deduplication, with score `0.8681`.
-

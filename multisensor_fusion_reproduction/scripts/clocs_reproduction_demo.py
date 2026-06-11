@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 """Create a report-friendly CLOCs-style candidate fusion visualization.
 
-This script uses the local KITTI demo sample plus the already generated
+This script uses the local KITTI demo sample plus the saved
 PointPainting detector predictions as 3D candidates. The cloned CLOCs repo does
 not include the Cascade-RCNN 2D detections, SECOND checkpoint, or CLOCs fusion
-checkpoint, so the 2D candidate branch is approximated from KITTI annotations
+checkpoint, so the 2D candidate branch is derived from KITTI annotations
 for visualization. The plotted pair features follow the CLOCs code path:
 2D IoU, 3D candidate score, 2D candidate score, and normalized distance.
 """

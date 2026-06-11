@@ -13,7 +13,8 @@
 ## 推荐查看的核心图片
 
 - `outputs/fusion_reproduction/fusion_ppt_panel.png`：相机原图、LiDAR 投影、BEV 点云三联图。
-- `outputs/fusion_reproduction/bevfusion_result_sample10.png`：BEVFusion 多模态 3D 检测可视化。
+- `outputs/fusion_reproduction/bevfusion_result.png`：BEVFusion 官方 nuScenes demo 多模态 3D 检测可视化。
+- `outputs/fusion_reproduction/bevfusion_kitti_000008_style.png`：使用 KITTI `000008` 输入整理的同帧对比图，便于和 PointPainting、CLOCs 放在同一页展示。
 - `outputs/pointpainting_mmseg_legacy/official_pointpainting_panel.png`：PointPainting 仓库内置 MMSegmentation DeepLabV3+ painting 流程可视化。
 - `outputs/pointpainting_detector_300iter/pointpainting_detector_panel.png`：painted PointPillar 单帧 detector 链路验证。
 - `outputs/clocs_official_000008/official_clocs_panel.png`：CLOCs 官方 checkpoint 单帧推理可视化。
@@ -26,6 +27,7 @@ multisensor_fusion_reproduction/
   README.md
   scripts/
     build_nuscenes_demo_ann.py
+    bevfusion_kitti_000008_style.py
     clocs_reproduction_demo.py
     convert_bevfusion_sparse_weights.py
     kitti_lidar_projection.py
